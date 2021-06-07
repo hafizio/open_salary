@@ -1,0 +1,14 @@
+<%= form_for @conn, @action, fn f -> %>
+  <%= label f, :salary_converted_min, "Minimum Salary (MYR)"%>
+  <%= text_input f, :salary_converted_min %>
+
+  <%= label f, :salary_converted_max, "Maximum Salary (MYR)"%>
+  <%= text_input f, :salary_converted_max %>
+
+  <%= label f, :cost_of_living_index, "Cost of Living Index"%>
+  <%= text_input f, :cost_of_living_index %>
+
+  <div>
+    <%= submit "Predict" %>
+  </div>
+<% end %>

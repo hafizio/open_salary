@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package OpenSalary;
+
+message SalaryParams {
+    float salary_converted_max = 1;
+    float salary_converted_min = 2;
+    float cost_of_living_index = 3;
+}

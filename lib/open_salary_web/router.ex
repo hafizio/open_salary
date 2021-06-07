@@ -17,9 +17,12 @@ defmodule OpenSalaryWeb.Router do
   scope "/", OpenSalaryWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    get "/", PageController, :index
+    post "/", PageController, :show
+
     live "/salaries", SalaryLive, :index
     live "/companies", CompanyLive, :index
+
   end
 
   # Other scopes may use custom stacks.
