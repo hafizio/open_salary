@@ -5,7 +5,7 @@
 # is restricted to this project.
 
 # General application configuration
-use Mix.Config
+import Config
 
 config :open_salary,
   ecto_repos: [OpenSalary.Repo]
