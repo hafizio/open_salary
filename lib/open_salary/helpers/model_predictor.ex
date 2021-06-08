@@ -3,14 +3,17 @@ defmodule OpenSalary.ModelPredictor do
 
   alias OpenSalary.PythonHelper, as: Helper
 
-  @path 'lib/open_salary/model/'
+  @path 'priv/model/'
 
   def predict(args) do
     call_python(:classifier, :predict_model, args)
   end
 
   defp call_python(module, func, args) do
-    pid = Helper.py_instance(Path.absname(@path))
+    path = List.to_string([:code.priv_dir(:open_salary), '/model'])
+
+    # pid = Helper.py_instance(Path.absname(@path))
+    pid = Helper.py_instance(Path.absname(path))
     result = Helper.py_call(pid, module, func, args)
 
     pid

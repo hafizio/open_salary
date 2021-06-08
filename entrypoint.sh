@@ -11,7 +11,7 @@ yarn install
 cd ../
 
 # Create Protobuf
-protoc --proto_path=./lib/open_salary/protobuf --python_out=./lib/open_salary/protobuf ./lib/open_salary/protobuf/salary.proto
+protoc --proto_path=./priv/model --python_out=./priv/model ./priv/model/salary.proto
 
 # Wait until Postgres is ready
 while ! pg_isready -q -h $PGHOST -p $PGPORT -U $PGUSER

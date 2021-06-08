@@ -1,13 +1,11 @@
 import os
 import joblib 
 import sys
-
-sys.path.insert(0, 'lib/open_salary/protobuf')
-
 import salary_pb2
 
 def load_model():
-    path = os.path.abspath('lib/open_salary/model/knn_simple_classifier.pkl')
+    dirname = os.path.dirname(__file__)
+    path = os.path.join(dirname, 'knn_simple_classifier.pkl')
     return joblib.load(path)  
 
 def predict_model(args):
