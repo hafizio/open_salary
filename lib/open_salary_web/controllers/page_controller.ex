@@ -26,7 +26,7 @@ defmodule OpenSalaryWeb.PageController do
       class = ML.predict([Salary.encode(salary_params)])
 
       conn
-      |> put_flash(:info, "Predicted salary class: #{class}")
+      |> put_flash(:info, class)
       |> render("index.html")
     else
       _error ->

@@ -20,6 +20,8 @@ defmodule OpenSalaryWeb.Router do
     get "/", PageController, :index
     post "/", PageController, :show
 
+    get "/salaries/new", SalaryController, :new
+
     live "/salaries", SalaryLive, :index
     live "/companies", CompanyLive, :index
 

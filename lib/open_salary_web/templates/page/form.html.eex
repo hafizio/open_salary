@@ -1,14 +1,22 @@
 <%= form_for @conn, @action, fn f -> %>
-  <%= label f, :salary_converted_min, "Minimum Salary (MYR)"%>
-  <%= text_input f, :salary_converted_min %>
+  <div class="rounded-md shadow-sm mb-3">
+    <%= label f, :salary_converted_min, "Starting Salary (MYR)", class: "sr-only" %>
+    <%= text_input f, :salary_converted_min, placeholder: "Starting Salary (MYR)", class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"%>
+  </div>
 
-  <%= label f, :salary_converted_max, "Maximum Salary (MYR)"%>
-  <%= text_input f, :salary_converted_max %>
+  <div class="rounded-md shadow-sm mb-3">
+    <%= label f, :salary_converted_max, "Current Salary (MYR)", class: "sr-only"%>
+    <%= text_input f, :salary_converted_max, placeholder: "Current Salary (MYR)", class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"%>
+  </div>
 
-  <%= label f, :cost_of_living_index, "Cost of Living Index"%>
-  <%= text_input f, :cost_of_living_index %>
+  <div class="rounded-md shadow-sm mb-3">
+    <%= label f, :cost_of_living_index, "Cost of Living Index", class: "sr-only"%>
+    <%= text_input f, :cost_of_living_index, placeholder: "Cost of Living Index", class: "appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5" %>
+  </div>
 
   <div>
-    <%= submit "Predict" %>
+    <span class="block w-full rounded-md shadow-sm">
+      <%= submit "Predict Your Salary Bracket", class: "w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out" %>
+    </span>
   </div>
 <% end %>
